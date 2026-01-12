@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 4</title>
+</head>
+
+<body>
+    <span>Bill value: </span><input type="text" name="bill" id="bill">
+    <br><br>
+    <button type="button" id="calculate">Calculate</button>
+
+    <script>
+        document.getElementById("calculate").onclick = () => {
+            const BETWEEN_50_AND_300_TIP_VALUE = 15 / 100, OTHER_TIP_VALUE = 20 / 100;
+            const LOWER_TIP_VALUE_LIMIT = 50, UPPER_TIP_VALUE_LIMIT = 300;
+
+            let bill = Number(document.getElementById("bill").value);
+            let tip = bill * (bill >= LOWER_TIP_VALUE_LIMIT && bill <= UPPER_TIP_VALUE_LIMIT ? BETWEEN_50_AND_300_TIP_VALUE : OTHER_TIP_VALUE);
+            let finalValue = bill + tip;
+            console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${finalValue}`);
+        }
+    </script>
+</body>
+
+</html>
