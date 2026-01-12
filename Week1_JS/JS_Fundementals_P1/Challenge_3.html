@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Dolphin scores:</p>
+    <span>Dolphin 1: </span><input type="text" name="dolphin1" id="dolphin1">
+    <span>Dolphin 2: </span><input type="text" name="dolphin2" id="dolphin2">
+    <span>Dolphin 3: </span><input type="text" name="dolphin3" id="dolphin3">
+    <br><br>
+    <p>Koala scores:</p>
+    <span>Koala 1: </span><input type="text" name="koala1" id="koala1">
+    <span>Koala 2: </span><input type="text" name="koala2" id="koala2">
+    <span>Koala 3: </span><input type="text" name="koala3" id="koala3">
+    <br><br>
+    <button type="button" id="calculate">Calculate</button>
+
+    <script>
+        document.getElementById("calculate").onclick = () => {
+            const MINIMUM_SCORE = 100;
+
+            let dolphinScores = [document.getElementById("dolphin1").value,
+            document.getElementById("dolphin2").value,
+            document.getElementById("dolphin3").value
+            ];
+            let koalaScores = [document.getElementById("koala1").value,
+            document.getElementById("koala2").value,
+            document.getElementById("koala3").value
+            ];
+
+            if (dolphinScores.some(score => score < MINIMUM_SCORE) && koalaScores.some(score => score < MINIMUM_SCORE))
+                console.log("No team wins.");
+            else if (dolphinScores.some(score => score < MINIMUM_SCORE))
+                console.log("Koala team wins.");
+            else if (koalaScores.some(score => score < MINIMUM_SCORE))
+                console.log("Dolphin team wins.");
+            else {
+                let dolphinAverageScore = 0;
+                for (let score of dolphinScores)
+                    dolphinAverageScore += Number(score);
+                dolphinAverageScore /= dolphinScores.length;
+
+                let koalaAverageScore = 0;
+                for (let score of koalaScores)
+                    koalaAverageScore += Number(score);
+                koalaAverageScore /= koalaScores.length;
+
+                if (dolphinAverageScore > koalaAverageScore)
+                    console.log("Dolphin team wins.");
+                else if (koalaAverageScore > dolphinAverageScore)
+                    console.log("Koala team wins.");
+                else
+                    console.log("Both teams draw.");
+            }
+        }
+    </script>
+</body>
+
+</html>
