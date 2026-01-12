@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 2</title>
+</head>
+
+<body>
+    <p>Mark's:</p>
+    <span>Mark's mass: </span><input type="text" name="mark-mass" id="mark-mass">
+    <span>Mark's height: </span><input type="text" name="mark-height" id="mark-height">
+    <br><br>
+    <p>John's:</p>
+    <span>John's mass: </span><input type="text" name="john-mass" id="john-mass">
+    <span>John's height: </span><input type="text" name="john-height" id="john-height">
+    <br><br>
+    <button type="button" id="result">Tính kết quả</button>
+    <script>
+        document.getElementById("result").onclick = () => {
+            let markMass = document.getElementById("mark-mass").value;
+            let markHeight = document.getElementById("mark-height").value;
+            let johnMass = document.getElementById("john-mass").value;
+            let johnHeight = document.getElementById("john-height").value;
+
+            let markBMI = markMass / markHeight ** 2;
+            let johnBMI = johnMass / (johnHeight * johnHeight);
+
+            let markHigherBMI = markBMI > johnBMI;
+            console.log(markHigherBMI ? `Mark's BMI ${markBMI} is higher than John's ${johnBMI}!` :
+                `John's BMI ${johnBMI} is higher than Mark's ${markBMI}!`
+            );
+        }
+    </script>
+</body>
+
+</html>
