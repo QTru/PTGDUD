@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 3</title>
+</head>
+
+<body>
+    <p>Mark's:</p>
+    <span>Mark's fullname: </span><input type="text" name="mark-fullname" id="mark-fullname">
+    <span>Mark's mass: </span><input type="text" name="mark-mass" id="mark-mass">
+    <span>Mark's height: </span><input type="text" name="mark-height" id="mark-height">
+    <br><br>
+    <p>John's:</p>
+    <span>John's fullname: </span><input type="text" name="john-fullname" id="john-fullname">
+    <span>John's mass: </span><input type="text" name="john-mass" id="john-mass">
+    <span>John's height: </span><input type="text" name="john-height" id="john-height">
+    <br><br>
+    <button type="button" id="result">Tính kết quả</button>
+    <script>
+        document.getElementById("result").onclick = () => {
+            function Person(fullname, mass, height) {
+                this.fullname = fullname;
+                this.mass = mass;
+                this.height = height;
+                this.calcBMI = () => this.mass / this.height ** 2;
+            }
+
+            let mark = new Person(
+                document.getElementById("mark-fullname").value,
+                document.getElementById("mark-mass").value,
+                document.getElementById("mark-height").value
+            );
+            let john = new Person(
+                document.getElementById("john-fullname").value,
+                document.getElementById("john-mass").value,
+                document.getElementById("john-height").value
+            );
+
+            let markBMI = mark.calcBMI();
+            let johnBMI = john.calcBMI();
+
+            let markHigherBMI = markBMI > johnBMI;
+            console.log(markHigherBMI ? `Mark's BMI (${markBMI}) is higher than John's (${johnBMI})!` :
+                `John's BMI (${johnBMI}) is higher than Mark's (${markBMI})!`
+            );
+        }
+    </script>
+</body>
+
+</html>
