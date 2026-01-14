@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 4</title>
+</head>
+
+<body>
+    <span>Bill value: </span><input type="text" name="bill" id="bill">
+    <br><br>
+    <button type="button" id="calculate">Calculate</button>
+
+    <script>
+        document.getElementById("calculate").onclick = () => {
+            const BETWEEN_50_AND_300_TIP_VALUE = 15 / 100, OTHER_TIP_VALUE = 20 / 100;
+            const LOWER_TIP_VALUE_LIMIT = 50, UPPER_TIP_VALUE_LIMIT = 300;
+
+            let bills = document.getElementById("bill").value.split(", ").map(Number);
+            let calcTip = bill => bill * (bill >= LOWER_TIP_VALUE_LIMIT && bill <= UPPER_TIP_VALUE_LIMIT ? BETWEEN_50_AND_300_TIP_VALUE : OTHER_TIP_VALUE);
+            let tips = [], totals = [];
+            for (let bill of bills) {
+                tips.push(calcTip(bill));
+                totals.push(bill + tips[tips.length - 1]);
+            }
+            function calcAverage(arr) {
+                let sum = 0;
+                for (let total of totals)
+                    sum += total;
+
+                return sum / totals.length;
+            }
+            let average = calcAverage(totals);
+
+            bills = bills.join(', '); tips = tips.join(', '); totals = totals.join(', ');
+            console.log(`The bill was ${bills}, the tip was ${tips}, the total value ${totals}, and the average value ${average}`);
+        }
+    </script>
+</body>
+
+</html>
