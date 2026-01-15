@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 4</title>
+</head>
+
+<body>
+    <script>
+        textarea = document.createElement("textarea");
+        document.body.append(textarea);
+        document.body.append(document.createElement("br"));
+        let button = document.createElement("button")
+        button.textContent = "Convert";
+        document.body.append(button);
+
+        button.onclick = () => {
+            let texts = textarea.value.split("\n");
+            texts = texts.map((text, index) => {
+                text = text.toLowerCase();
+                text = text.split("_");
+                text = (text[0] + text[1].charAt(0).toUpperCase() + text[1].slice(1)).padEnd(20) +
+                    "✅".repeat(index + 1);
+
+                return text;
+            })
+            console.log(texts.join("\n"));
+        }
+    </script>
+</body>
+
+</html>
