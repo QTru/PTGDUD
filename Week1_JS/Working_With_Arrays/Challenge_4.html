@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 4</title>
+</head>
+
+<body>
+    <script>
+        const dogs = [
+            { weight: 22, curFood: 250, owners: ["Alice", "Bob"] },
+            { weight: 8, curFood: 200, owners: ["Matilda"] },
+            { weight: 13, curFood: 275, owners: ["Sarah", "John"] },
+            { weight: 32, curFood: 340, owners: ["Michael"] },
+        ];
+
+        dogs.map(dog => {
+            dog.recommendedFood = dog.weight ** 0.75 * 28;
+        });
+
+        dogs.forEach(dog => {
+            if (dog.owners.includes("Sarah"))
+                console.log("Sarah's dog eating " +
+                    (dog.curFood >= dog.recommendedFood * 1.1 ? "too much!" :
+                        (dog.curFood <= dog.recommendedFood * 0.9 ? "too little!" : "okay!")
+                    )
+                );
+        });
+
+        let ownersEatTooMuch = dogs.filter(dog => dog.curFood >= dog.recommendedFood * 1.1);
+        let ownersEatTooLittle = dogs.filter(dog => dog.curFood <= dog.recommendedFood * 0.9);
+
+        ownersEatTooMuch.forEach(dog => {
+            console.log(`${dog.owners.join(" and ")} dogs eat too much!`);
+        })
+
+        ownersEatTooLittle.forEach(dog => {
+            console.log(`${dog.owners.join(" and ")} dogs eat too little!`);
+        })
+
+        console.log("Dogs eating exact amount of recommended food:");
+        dogs.forEach(dog => {
+            console.log(dog.curFood == dog.recommendedFood)
+        })
+
+        console.log("Dogs eating okay amount of food:");
+        dogs.forEach(dog => {
+            console.log(dog.curFood > dog.recommendedFood * 0.9 && dog.curFood < dog.recommendedFood * 1.1)
+        })
+
+        let dogsEatingOkay = dogs.filter(dog => dog.curFood > dog.recommendedFood * 0.9 && dog.curFood < dog.recommendedFood * 1.1);
+
+        let sortedDogs = dogs.sort((a, b) => a.recommendedFood - b.recommendedFood);
+        console.log(sortedDogs);
+    </script>
+</body>
+
+</html>
