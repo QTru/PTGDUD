@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 4</title>
+</head>
+
+<body>
+    <script>
+        class CarCl {
+            constructor(make, speed) {
+                this.make = make;
+                this.speed = speed;
+            }
+
+            accelerate() {
+                this.speed += 10;
+            }
+
+            brake() {
+                this.speed -= 5;
+            }
+        }
+
+        class EVCl extends CarCl {
+            #charge;
+
+            constructor(make, speed, charge) {
+                super(make, speed);
+                this.charge = charge;
+            }
+
+            accelerate() {
+                this.speed += 20;
+                console.log(`${this.make} going at ${this.speed} km/h, with a charge of ${this.charge}%`);
+            }
+
+            chargeBattery(chargeTo) {
+                this.charge = chargeTo;
+            }
+        }
+
+        let rivian = new EVCl("Rivian", 120, 23);
+        rivian.accelerate();
+        rivian.brake();
+        rivian.chargeBattery(90);
+        console.log(rivian);
+    </script>
+</body>
+
+</html>
