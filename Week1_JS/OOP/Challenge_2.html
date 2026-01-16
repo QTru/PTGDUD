@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 2</title>
+</head>
+
+<body>
+    <script>
+        class CarCl {
+            #make;
+            #speed;
+
+            constructor(make, speed) {
+                this.#make = make;
+                this.#speed = speed * 1.6;
+            }
+
+            get speedUS() {
+                return this.#speed / 1.6;
+            }
+
+            set speedUS(speed) {
+                this.#speed = speed * 1.6;
+            }
+
+            accelerate() {
+                this.#speed += 10;
+            }
+
+            brake() {
+                this.#speed -= 5;
+            }
+        }
+
+        let test = new CarCl("Ford", 120 / 1.6);
+        test.accelerate(); test.brake();
+        console.log(test.speedUS);
+    </script>
+</body>
+
+</html>
