@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 1</title>
+</head>
+
+<body>
+    <script>
+        function Car(make, speed) {
+            this.make = make;
+            this.speed = speed;
+        }
+
+        let bmw = new Car("BMW", 120);
+        let mercedes = new Car("Mercedes", 95);
+
+        function accelerate(car) {
+            car.speed += 10;
+        }
+
+        accelerate(bmw); accelerate(mercedes);
+
+        console.log(`${bmw.make}'s accelerated speed: ${bmw.speed}\n` +
+            `${mercedes.make}'s accelerated speed: ${mercedes.speed}`
+        );
+
+        function brake(car) {
+            car.speed -= 5;
+        }
+
+        brake(bmw); brake(mercedes);
+
+        console.log(`${bmw.make}'s braked speed: ${bmw.speed}\n` +
+            `${mercedes.make}'s braked speed: ${mercedes.speed}`
+        );
+
+        let car1 = new Car("Car1", 57);
+        let car2 = new Car("Car2", 63);
+
+        for (let i = 0; i < 10; i++)
+            Math.floor(Math.random() * 2) == 0 ? accelerate(car1) : brake(car1);
+
+        for (let i = 0; i < 10; i++)
+            Math.floor(Math.random() * 2) == 0 ? accelerate(car2) : brake(car2);
+
+        console.log(`${car1.make}'s modified speed: ${car1.speed}\n` +
+            `${car2.make}'s modified speed: ${car2.speed}`
+        );
+    </script>
+</body>
+
+</html>
