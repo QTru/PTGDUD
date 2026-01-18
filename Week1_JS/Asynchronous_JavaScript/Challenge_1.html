@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 1</title>
+</head>
+
+<body>
+    <script>
+        function whereAmI(lat, lng) {
+            fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`)
+                .then(response => {
+                    if (!response.ok)
+                        throw new Error(`Geocoding failed (${response.status}): Too many requests. Please wait and try again.`);
+
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(data);
+                    console.log(`You are in ${data.city}, ${data.country}`);
+
+                    return fetch(`https://restcountries.com/v3.1/name/${data.country}`);
+                })
+                .then(response => {
+                    return response.json();
+                })
+                .then(data => {
+                    const country = data[0];
+                    console.log('Country Data:', country);
+                    console.log(`Name: ${country.name.common}`);
+                    console.log(`Region: ${country.region}`);
+                    console.log(`Population: ${(+country.population / 1000000).toFixed(1)} million people`);
+                    console.log(`Language: ${Object.values(country.languages)[0]}`);
+                    console.log(`Currency: ${Object.values(country.currencies)[0].name}`);
+                })
+                .catch(err => {
+                    console.error(err);
+                });
+        }
+
+        whereAmI(52.508, 13.381);
+        setTimeout(() => whereAmI(19.037, 72.873), 2000);
+        setTimeout(() => whereAmI(-33.933, 18.474), 4000);
+    </script>
+</body>
+
+</html>
