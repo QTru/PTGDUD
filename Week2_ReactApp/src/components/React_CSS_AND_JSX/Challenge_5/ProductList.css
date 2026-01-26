@@ -1,0 +1,27 @@
+.media {
+    display: grid;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    width: 50%;
+    height: 50%;
+}
+
+.media>* {
+    background-color: white;
+}
+
+@media (max-width: 1024px) {
+    .media {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .media {
+        grid-template-columns: auto;
+    }
+}
