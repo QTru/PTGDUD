@@ -9,10 +9,13 @@ import ProductList from './components/React_CSS_AND_JSX/Challenge_5/ProductList'
 import Header from './components/React_Fundamentals_AND_JSX/Challenge_1/Header'
 import StudentInfo from './components/React_Fundamentals_AND_JSX/Challenge_1/StudentInfo'
 import Footer from './components/React_Fundamentals_AND_JSX/Challenge_1/Footer'
+import Count from './components/React_Fundamentals_AND_JSX/Challenge_2/Count'
+import CountButton from './components/React_Fundamentals_AND_JSX/Challenge_2/CountButton'
 
 function App() {
   // const [state, setState] = useState('success');
   // const [isLogin, setLogin] = useState(false);
+  const [count, setCount] = useState(0);
 
   return (
     <>
@@ -38,9 +41,15 @@ function App() {
       {/* <ProductList></ProductList> */}
 
       {/* React_Fundamentals_AND_JSX Challenge 1 */}
-      <Header></Header>
+      {/* <Header></Header>
       <StudentInfo name='John Smith' id='12345678' class='A1'></StudentInfo>
-      <Footer></Footer>
+      <Footer></Footer> */}
+
+      {/* React_Fundamentals_AND_JSX Challenge 2 */}
+      <CountButton operation='-' subtraction={() => setCount(Math.max(0, count - 1))}></CountButton>
+      <Count count={count}></Count>
+      <CountButton operation='+' addition={() => setCount(count + 1)}></CountButton>
+      <CountButton operation='reset' reset={() => setCount(0)}></CountButton>
     </>
   )
 }

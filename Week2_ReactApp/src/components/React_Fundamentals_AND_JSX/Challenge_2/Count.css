@@ -1,0 +1,13 @@
+#count {
+    display: inline-block;
+    height: 100%;
+    width: 100px;
+}
+
+.red {
+    background-color: red;
+}
+
+.white {
+    background-color: white;
+}
