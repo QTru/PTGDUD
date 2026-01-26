@@ -11,11 +11,12 @@ import StudentInfo from './components/React_Fundamentals_AND_JSX/Challenge_1/Stu
 import Footer from './components/React_Fundamentals_AND_JSX/Challenge_1/Footer'
 import Count from './components/React_Fundamentals_AND_JSX/Challenge_2/Count'
 import CountButton from './components/React_Fundamentals_AND_JSX/Challenge_2/CountButton'
+import DynamicForm from './components/React_Fundamentals_AND_JSX/Challenge_3/DynamicForm'
 
 function App() {
   // const [state, setState] = useState('success');
   // const [isLogin, setLogin] = useState(false);
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
 
   return (
     <>
@@ -46,10 +47,13 @@ function App() {
       <Footer></Footer> */}
 
       {/* React_Fundamentals_AND_JSX Challenge 2 */}
-      <CountButton operation='-' subtraction={() => setCount(Math.max(0, count - 1))}></CountButton>
+      {/* <CountButton operation='-' subtraction={() => setCount(Math.max(0, count - 1))}></CountButton>
       <Count count={count}></Count>
       <CountButton operation='+' addition={() => setCount(count + 1)}></CountButton>
-      <CountButton operation='reset' reset={() => setCount(0)}></CountButton>
+      <CountButton operation='reset' reset={() => setCount(0)}></CountButton> */}
+
+      {/* React_Fundamentals_AND_JSX Challenge 3 */}
+      <DynamicForm></DynamicForm>
     </>
   )
 }
