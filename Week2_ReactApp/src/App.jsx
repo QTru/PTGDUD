@@ -6,10 +6,13 @@ import AlertButton from './components/React_CSS_AND_JSX/Challenge_3/AlertButton'
 import Alert from './components/React_CSS_AND_JSX/Challenge_3/Alert'
 import LoginForm from './components/React_CSS_AND_JSX/Challenge_4/LoginForm'
 import ProductList from './components/React_CSS_AND_JSX/Challenge_5/ProductList'
+import Header from './components/React_Fundamentals_AND_JSX/Challenge_1/Header'
+import StudentInfo from './components/React_Fundamentals_AND_JSX/Challenge_1/StudentInfo'
+import Footer from './components/React_Fundamentals_AND_JSX/Challenge_1/Footer'
 
 function App() {
   // const [state, setState] = useState('success');
-  const [isLogin, setLogin] = useState(false);
+  // const [isLogin, setLogin] = useState(false);
 
   return (
     <>
@@ -32,7 +35,12 @@ function App() {
       <LoginForm isLogin={isLogin} onExit={() => setLogin(false)}></LoginForm> */}
 
       {/* React_CSS_AND_JSX Challenge 5 */}
-      <ProductList></ProductList>
+      {/* <ProductList></ProductList> */}
+
+      {/* React_Fundamentals_AND_JSX Challenge 1 */}
+      <Header></Header>
+      <StudentInfo name='John Smith' id='12345678' class='A1'></StudentInfo>
+      <Footer></Footer>
     </>
   )
 }
