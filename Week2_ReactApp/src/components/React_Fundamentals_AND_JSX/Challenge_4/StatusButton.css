@@ -1,0 +1,7 @@
+#status-button {
+    color: white;
+}
+
+div:has(#status-button) {
+    padding: 10px 0;
+}

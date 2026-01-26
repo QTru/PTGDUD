@@ -12,11 +12,14 @@ import Footer from './components/React_Fundamentals_AND_JSX/Challenge_1/Footer'
 import Count from './components/React_Fundamentals_AND_JSX/Challenge_2/Count'
 import CountButton from './components/React_Fundamentals_AND_JSX/Challenge_2/CountButton'
 import DynamicForm from './components/React_Fundamentals_AND_JSX/Challenge_3/DynamicForm'
+import StatusBadge from './components/React_Fundamentals_AND_JSX/Challenge_4/StatusBadge'
+import StatusButton from './components/React_Fundamentals_AND_JSX/Challenge_4/StatusButton'
 
 function App() {
   // const [state, setState] = useState('success');
   // const [isLogin, setLogin] = useState(false);
   // const [count, setCount] = useState(0);
+  const [status, setStatus] = useState('online');
 
   return (
     <>
@@ -53,7 +56,13 @@ function App() {
       <CountButton operation='reset' reset={() => setCount(0)}></CountButton> */}
 
       {/* React_Fundamentals_AND_JSX Challenge 3 */}
-      <DynamicForm></DynamicForm>
+      {/* <DynamicForm></DynamicForm> */}
+
+      {/* React_Fundamentals_AND_JSX Challenge 4 */}
+      <StatusBadge status={status}></StatusBadge>
+      <StatusButton onClick={() => setStatus('online')}>Online</StatusButton>
+      <StatusButton onClick={() => setStatus('offline')}>Offline</StatusButton>
+      <StatusButton onClick={() => setStatus('busy')}>Busy</StatusButton>
     </>
   )
 }
