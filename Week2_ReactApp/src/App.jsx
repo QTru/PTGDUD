@@ -16,6 +16,7 @@ import StatusBadge from './components/React_Fundamentals_AND_JSX/Challenge_4/Sta
 import StatusButton from './components/React_Fundamentals_AND_JSX/Challenge_4/StatusButton'
 import TodoInput from './components/React_Fundamentals_AND_JSX/Challenge_5/TodoInput'
 import PersonalInfo from './components/React_Hook/Challenge_1/PersonalInfo'
+import Clock from './components/React_Hook/Challenge_2/Clock'
 
 function App() {
   // const [state, setState] = useState('success');
@@ -23,7 +24,7 @@ function App() {
   // const [count, setCount] = useState(0);
   // const [status, setStatus] = useState('online');
   // const [todos, setTodos] = useState({isOpen: false, todoList: []});
-  const [info, setInfo] = useState({name: '', email: '', age: -1});
+  // const [info, setInfo] = useState({name: '', email: '', age: -1});
 
   return (
     <>
@@ -72,7 +73,10 @@ function App() {
       {/* <TodoInput todos={todos} setTodos={x => setTodos(x)}></TodoInput> */}
 
       {/* React_Hook Challenge 1 */}
-      <PersonalInfo info={info} setInfo={x => setInfo(x)}></PersonalInfo>
+      {/* <PersonalInfo info={info} setInfo={x => setInfo(x)}></PersonalInfo> */}
+
+      {/* React_Hook Challenge 2 */}
+      <Clock></Clock>
     </>
   )
 }
