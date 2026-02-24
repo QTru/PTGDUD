@@ -15,13 +15,15 @@ import DynamicForm from './components/React_Fundamentals_AND_JSX/Challenge_3/Dyn
 import StatusBadge from './components/React_Fundamentals_AND_JSX/Challenge_4/StatusBadge'
 import StatusButton from './components/React_Fundamentals_AND_JSX/Challenge_4/StatusButton'
 import TodoInput from './components/React_Fundamentals_AND_JSX/Challenge_5/TodoInput'
+import PersonalInfo from './components/React_Hook/Challenge_1/PersonalInfo'
 
 function App() {
   // const [state, setState] = useState('success');
   // const [isLogin, setLogin] = useState(false);
   // const [count, setCount] = useState(0);
   // const [status, setStatus] = useState('online');
-  const [todos, setTodos] = useState({isOpen: false, todoList: []});
+  // const [todos, setTodos] = useState({isOpen: false, todoList: []});
+  const [info, setInfo] = useState({name: '', email: '', age: -1});
 
   return (
     <>
@@ -67,7 +69,10 @@ function App() {
       <StatusButton onClick={() => setStatus('busy')}>Busy</StatusButton> */}
 
       {/* React_Fundamentals_AND_JSX Challenge 5 */}
-      <TodoInput todos={todos} setTodos={x => setTodos(x)}></TodoInput>
+      {/* <TodoInput todos={todos} setTodos={x => setTodos(x)}></TodoInput> */}
+
+      {/* React_Hook Challenge 1 */}
+      <PersonalInfo info={info} setInfo={x => setInfo(x)}></PersonalInfo>
     </>
   )
 }
