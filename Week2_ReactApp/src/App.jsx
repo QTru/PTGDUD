@@ -14,12 +14,14 @@ import CountButton from './components/React_Fundamentals_AND_JSX/Challenge_2/Cou
 import DynamicForm from './components/React_Fundamentals_AND_JSX/Challenge_3/DynamicForm'
 import StatusBadge from './components/React_Fundamentals_AND_JSX/Challenge_4/StatusBadge'
 import StatusButton from './components/React_Fundamentals_AND_JSX/Challenge_4/StatusButton'
+import TodoInput from './components/React_Fundamentals_AND_JSX/Challenge_5/TodoInput'
 
 function App() {
   // const [state, setState] = useState('success');
   // const [isLogin, setLogin] = useState(false);
   // const [count, setCount] = useState(0);
-  const [status, setStatus] = useState('online');
+  // const [status, setStatus] = useState('online');
+  const [todos, setTodos] = useState({isOpen: false, todoList: []});
 
   return (
     <>
@@ -59,10 +61,13 @@ function App() {
       {/* <DynamicForm></DynamicForm> */}
 
       {/* React_Fundamentals_AND_JSX Challenge 4 */}
-      <StatusBadge status={status}></StatusBadge>
+      {/* <StatusBadge status={status}></StatusBadge>
       <StatusButton onClick={() => setStatus('online')}>Online</StatusButton>
       <StatusButton onClick={() => setStatus('offline')}>Offline</StatusButton>
-      <StatusButton onClick={() => setStatus('busy')}>Busy</StatusButton>
+      <StatusButton onClick={() => setStatus('busy')}>Busy</StatusButton> */}
+
+      {/* React_Fundamentals_AND_JSX Challenge 5 */}
+      <TodoInput todos={todos} setTodos={x => setTodos(x)}></TodoInput>
     </>
   )
 }

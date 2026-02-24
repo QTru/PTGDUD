@@ -1,0 +1,54 @@
+.list-window {
+  width: 800px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.list-window * {
+  border: none;
+}
+
+.list-window button {
+  background-color: white;
+  color: black;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  font-size: 36px;
+  line-height: 40px;
+}
+
+.add-todo {
+  width: max-content !important;
+  padding: 0 20px !important;
+}
+
+.delete-todo {
+  width: max-content !important;
+  padding: 0 20px !important;
+}
+
+.delete-todo:disabled {
+  background-color: rgba(255, 255, 255, 0.308);
+}
+
+.todo-container {
+  width: inherit;
+  height: 480px;
+  margin: 0;
+  overflow-y: auto;
+}
+
+.action-buttons {
+  width: inherit;
+  display: flex;
+  justify-content: space-around;
+}
+
+ul {
+  padding: 0;
+}
