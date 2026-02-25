@@ -1,0 +1,40 @@
+.product-search {
+  border: none;
+}
+
+.product-search * {
+  border: none;
+  font-size: 18px;
+  line-height: 36px;
+  padding: 0;
+  margin: 0;
+}
+
+form {
+  flex-direction: row;
+  width: 1000px;
+  height: 36px;
+}
+
+form>button {
+  width: 80px;
+}
+
+.product-list {
+  width: 100%;
+  height: 600px;
+  overflow-y: auto;
+}
+
+.product-list>table {
+  width: 100%;
+}
+
+.product-list td:nth-child(2) {
+  text-align: left;
+}
+
+p {
+  text-align: right;
+  font-weight: bold;
+}

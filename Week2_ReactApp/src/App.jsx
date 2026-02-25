@@ -17,6 +17,7 @@ import StatusButton from './components/React_Fundamentals_AND_JSX/Challenge_4/St
 import TodoInput from './components/React_Fundamentals_AND_JSX/Challenge_5/TodoInput'
 import PersonalInfo from './components/React_Hook/Challenge_1/PersonalInfo'
 import Clock from './components/React_Hook/Challenge_2/Clock'
+import ProductSearch from './components/React_Hook/Challenge_3/ProductSearch'
 
 function App() {
   // const [state, setState] = useState('success');
@@ -76,7 +77,10 @@ function App() {
       {/* <PersonalInfo info={info} setInfo={x => setInfo(x)}></PersonalInfo> */}
 
       {/* React_Hook Challenge 2 */}
-      <Clock></Clock>
+      {/* <Clock></Clock> */}
+
+      {/* React_Hook Challenge 3 */}
+      <ProductSearch></ProductSearch>
     </>
   )
 }
