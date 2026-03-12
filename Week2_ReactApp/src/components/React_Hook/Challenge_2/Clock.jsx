@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import './Clock.css'
+import styles from './Clock.module.css'
 
 function Clock() {
   const getCurrentTime = () => {

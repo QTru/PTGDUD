@@ -1,20 +1,20 @@
 import React from 'react'
-import './LoginForm.css'
+import styles from './LoginForm.module.css'
 
 function LoginForm(props) {
   return (
-    <div className={props.isLogin? "appear" : "disappear"}>
+    <div className={styles[props.isLogin ? "appear" : "disappear"]}>
         <div>
-            <button className='exitButton' type="button" onClick={() => props.onExit()}>X</button>
+            <button className={styles.exitButton} type="button" onClick={() => props.onExit()}>X</button>
         </div>
         <div>
-            <label htmlFor="username">Username: </label><input type="text" name="" id="" />
+            <label>Username: </label><input type="text" name="" id="" />
         </div>
         <div>
-            <label htmlFor="password">Password: </label><input type="password" name="" id="" />
+            <label>Password: </label><input type="password" name="" id="" />
         </div>
         <div>
-            <button className='loginButton' type="button" onClick={() => props.onExit()}>Login</button>
+            <button className={styles.loginButton} type="button" onClick={() => props.onExit()}>Login</button>
         </div>
     </div>
   )

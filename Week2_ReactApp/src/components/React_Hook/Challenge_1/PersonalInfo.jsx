@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect } from 'react'
-import './PersonalInfo.css'
+import styles from './PersonalInfo.module.css'
 
 function PersonalInfo({info, setInfo}) {
   const updateInfo = (e) => {
@@ -27,7 +27,7 @@ function PersonalInfo({info, setInfo}) {
   }, [info]);
 
   return (
-    <div>
+    <div className={styles.container}>
       <form action="">
         <label>Name: <input type="text" name="" id="name" onChange={updateInfo} /><br /></label>
         <label>Email: <input type="text" name="" id="email" onChange={updateInfo} /><br /></label>

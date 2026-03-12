@@ -1,9 +1,9 @@
 import React from 'react'
-import './Alert.css'
+import styles from './Alert.module.css'
 
 function Alert(props) {
   return (
-    <div className={props.state}>
+    <div className={`${styles.container} ${styles[props.state]}`}>
         {props.state}
     </div>
   )

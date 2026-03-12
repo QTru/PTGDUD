@@ -1,0 +1,10 @@
+.button {
+  display: inline-block;
+  height: 50%;
+
+  & > button {
+    background-color: white;
+    color: black;
+    height: 50%;
+  }
+}

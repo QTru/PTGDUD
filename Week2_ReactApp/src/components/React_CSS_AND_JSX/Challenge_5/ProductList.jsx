@@ -1,9 +1,9 @@
 import React from 'react'
-import './ProductList.css'
+import styles from './ProductList.module.css'
 
 function ProductList() {
     return (
-        <div className='media'>
+        <div className={styles.media}>
             <div></div>
             <div></div>
             <div></div>

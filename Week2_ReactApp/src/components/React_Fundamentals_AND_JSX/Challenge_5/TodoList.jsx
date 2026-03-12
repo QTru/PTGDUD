@@ -1,5 +1,5 @@
 import React from 'react'
-import './TodoList.css'
+import styles from './TodoList.module.css'
 import TodoItem from './TodoItem.jsx'
 
 function TodoList({todos, setTodos}) {
@@ -25,16 +25,16 @@ function TodoList({todos, setTodos}) {
   console.log(hasSelectedTodos);
 
   return (
-    <div className='list-window' style={{display: todos.isOpen? 'flex' : 'none'}}>
+    <div className={styles.listWindow} style={{display: todos.isOpen? 'flex' : 'none'}}>
       <button type="button" onClick={closeTodos}>X</button>
-      <div className='todo-container'>
+      <div className={styles.todoContainer}>
         <ul>
           {todos.todoList.map(todo => <TodoItem key={todo.id} id={todo.id} todos={todos} setTodos={x => setTodos(x)}></TodoItem>)}
         </ul>
       </div>
-      <div className='action-buttons'>
-        <button type="button" className='add-todo' onClick={addTodos}>Add Todo</button>
-        <button type="button" className='delete-todo' disabled={!hasSelectedTodos} onClick={deleteTodos}>Delete Todo</button>
+      <div className={styles.actionButtons}>
+        <button type="button" className={styles.addTodo} onClick={addTodos}>Add Todo</button>
+        <button type="button" className={styles.deleteTodo} disabled={!hasSelectedTodos} onClick={deleteTodos}>Delete Todo</button>
       </div>
     </div>
   )

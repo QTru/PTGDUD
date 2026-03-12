@@ -1,5 +1,5 @@
 import React, {useState, useRef, useEffect, useMemo} from 'react'
-import './ProductSearch.css'
+import styles from './ProductSearch.module.css'
 import mockData from './MOCK_DATA.json'
 
 function ProductSearch() {
@@ -49,7 +49,7 @@ function ProductSearch() {
   })
   
   return (
-    <div className='product-search'>
+    <div className='productSearch'>
       <form>
         <label htmlFor="name">Name: </label><input type="text" name="name" id="name" autoComplete='on' onChange={updateReferencedFilters} />
         <label htmlFor="min-price">Min Price: </label><input type="number" name="min-price" id="min-price" onChange={updateReferencedFilters} />
@@ -57,7 +57,7 @@ function ProductSearch() {
         <button type="button" onClick={updateFiltersStates}>Filter</button>
       </form>
 
-      <div className='product-list'>
+      <div className='productList'>
         <table>
           <thead>
             <tr><th>ID</th><th>Name</th><th>Price</th></tr>

@@ -1,9 +1,9 @@
 import React from 'react'
-import './StatusBadge.css'
+import styles from './StatusBadge.module.css'
 
 function StatusBadge(props) {
     return (
-        <div id='status-badge' className={props.status}></div>
+        <div className={`${styles.statusBadge} ${styles[props.status]}`}></div>
     )
 }
 

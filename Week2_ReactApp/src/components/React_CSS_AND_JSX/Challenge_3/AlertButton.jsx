@@ -1,10 +1,12 @@
 import React from 'react'
-import './AlertButton.css'
+import styles from './AlertButton.module.css'
 
 function Button(props) {
   return (
-    <div className='button-wrapper' onClick={props.onClick}>
-        <button type="button" className={props.type}>{props.type}</button>
+    <div className={styles.buttonwrapper} onClick={props.onClick}>
+        <button type="button" className={styles[props.type]}>
+            {props.type}
+        </button>
     </div>
   )
 }

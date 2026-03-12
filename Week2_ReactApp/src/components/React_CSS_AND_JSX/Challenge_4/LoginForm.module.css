@@ -1,0 +1,45 @@
+.appear {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #242424;
+  width: 400px;
+  padding: 20px;
+
+  & > * {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  & div {
+    padding: 0 0 20px 0;
+  }
+
+  & input {
+    width: 300px;
+  }
+
+  & input:focus {
+    box-shadow: 0 0 5px 5px gray;
+  }
+
+  & div:has(.exitButton) {
+    justify-content: right;
+  }
+}
+
+.exitButton {
+  background-color: inherit;
+  width: 50px;
+}
+
+.disappear {
+  display: none;
+}
+
+.loginButton {
+  color: white;
+  width: 100%;
+}

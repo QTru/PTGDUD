@@ -1,5 +1,5 @@
 import React from 'react'
-import './DynamicForm.css'
+import styles from './DynamicForm.module.css'
 import { useState } from 'react'
 
 function DynamicForm() {
@@ -7,7 +7,7 @@ function DynamicForm() {
     const [email, setEmail] = useState('');
 
     return (
-        <div id='dynamic-form'>
+        <div className={styles.dynamicForm}>
             <div>
                 <label>Name: </label>
                 <input type="text" name="" id="" onChange={e => setName(e.target.value)} />

@@ -1,10 +1,10 @@
 import React from 'react'
-import './StatusButton.css'
+import styles from './StatusButton.module.css'
 
 function StatusButton(props) {
     return (
-        <div>
-            <button id='status-button' type="button" onClick={props.onClick}>{props.children}</button>
+        <div className={styles.statusButton}>
+            <button type="button" onClick={props.onClick}>{props.children}</button>
         </div>
     )
 }

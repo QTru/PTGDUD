@@ -1,5 +1,5 @@
 import React from 'react'
-import './TodoItem.css'
+import styles from './TodoItem.module.css'
 
 function TodoItem({id, todos, setTodos}) {
   const updateTodos = (e) => {
@@ -16,7 +16,7 @@ function TodoItem({id, todos, setTodos}) {
   };
 
   return (
-    <li className='item' id={id}>
+    <li className={styles.item} id={id}>
       <input type="checkbox" name="" id={id} onChange={updateTodos} />
       <input type="text" name="" id={id} placeholder='Enter todos...' onChange={updateTodos} />
     </li>

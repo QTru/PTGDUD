@@ -1,5 +1,5 @@
 import React from 'react'
-import './CountButton.css'
+import styles from './CountButton.module.css'
 
 function CountButton(props) {
     function clickEvent() {
@@ -19,7 +19,7 @@ function CountButton(props) {
     }
 
     return (
-        <div className='button'>
+        <div className={styles.button}>
             <button type="button" onClick={clickEvent}>{props.operation}</button>
         </div >
     )

@@ -1,9 +1,9 @@
 import React from 'react'
-import './Count.css'
+import styles from './Count.module.css'
 
 function Count(props) {
     return (
-        <div id='count' className={props.count > 10 ? 'red' : 'white'}>
+        <div className={`${styles.count} ${props.count > 10? styles.red : styles.white}`}>
             <p>{props.count}</p>
         </div>
     )
