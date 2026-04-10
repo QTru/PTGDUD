@@ -1,12 +1,17 @@
 import "./App.css";
 import ComponentA from "./components/Challenge_1/ComponentA";
 import ComponentB from "./components/Challenge_1/ComponentB";
+import ThemeToggle from "./components/Challnege_2/ThemeToggle";
 
 function App() {
   return (
     <>
-      <ComponentA />
-      <ComponentB />
+      {/* Challenge 1 */}
+      {/* <ComponentA />
+      <ComponentB /> */}
+
+      {/* Challenge 2 */}
+      <ThemeToggle />
     </>
   );
 }

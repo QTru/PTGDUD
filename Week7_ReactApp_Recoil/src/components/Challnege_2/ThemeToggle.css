@@ -1,0 +1,11 @@
+.theme-toggle {
+  height: 90vh;
+
+  &.dark {
+    background-color: black;
+  }
+
+  &.light {
+    background-color: white;
+  }
+}
